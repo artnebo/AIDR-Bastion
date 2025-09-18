@@ -445,7 +445,7 @@ response: block
 [Uncoder AI](https://tdm.socprime.com/uncoder-ai/) is a powerful tool for converting Sigma and Roota rules to various formats including Semgrep:
 
 1. **Visit [Uncoder AI](https://tdm.socprime.com/uncoder-ai/)**
-2. **Register acount for free**
+2. **Register account for free**
 3. **Select Roota/Sigma to Semgrep conversion**
 4. **Paste your Roota or Sigma rule**
 5. **Generate Semgrep YAML rule**
