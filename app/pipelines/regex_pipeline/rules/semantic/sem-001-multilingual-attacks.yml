@@ -1,0 +1,18 @@
+name: 'SEM-001: Multilingual Attacks'
+details: 'Detects override phrases in multiple languages. (Example: Spanish, French, German). https://tdm.socprime.com/'
+author: SOC Prime Team
+severity: medium
+date: 2025-08-08
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+  - '(?i)\b(?:ignora|olvida|ignoriere|ignorer|oublie)\s+(?:las|les|die)\s+(?:instrucciones|anweisungen|instructions)\b'
+references:
+- https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+license: DRL 1.1
+uuid: c3d4e5f6-a7b8-4c9d-8e0f-1a2b3c4d5e6f
+response: notify

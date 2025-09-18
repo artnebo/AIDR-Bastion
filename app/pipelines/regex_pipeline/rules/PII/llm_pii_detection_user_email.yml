@@ -1,0 +1,20 @@
+name: User Email (LLM PII Detection)
+details: Detects the presence, sharing, or solicitation of personally identifiable information (PII) in the form of email addresses within prompts or responses involving the user. Email addresses are sensitive data that can be used to identify, contact, or target individuals and therefore require strict handling under data protection standards.
+author: SOC Prime Team
+severity: high
+type: query
+date: 2024/06/03
+detection:
+  language: llm-regex-pattern
+  pattern: 
+   - \b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+references:
+- https://www
+tags: tags
+license: DRL 1.1
+uuid: 6035ab65-eb10-4f36-ae9e-1d5e9e2b611b
+response: notify
