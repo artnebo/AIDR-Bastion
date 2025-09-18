@@ -3,9 +3,8 @@ Module for managing pipelines and their configuration.
 Moved to a separate file to avoid circular imports.
 """
 
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING
 
-import ollama
 from sentence_transformers import SentenceTransformer
 
 from app.modules.logger import pipeline_logger
@@ -53,41 +52,6 @@ def get_pipelines_from_config(configs: list[dict]) -> dict[str, list["BasePipeli
             result[flow_name] = pipelines
     result["default"] = list(PIPELINES_MAP.values())
     return result
-
-
-def ollama_text_embedding(text: str) -> Optional[list[float]]:
-    """
-    Generate vector embedding for the given text using Ollama model.
-
-    This function converts text into a numerical vector representation that can be used
-    for similarity comparisons and vector-based operations. The embedding is generated
-    using the configured Ollama model and is expected to be 768-dimensional.
-
-    Args:
-        text: The input text to generate embedding for
-
-    Returns:
-        Optional[list[float]]: A list containing the 768-dimensional embedding vector,
-                              or None if embedding generation fails or returns invalid data
-
-    Raises:
-        ValueError: If the received embedding is None or doesn't have the expected 768 dimensions
-
-    Note:
-        The function expects the embedding model to return vectors with exactly 768 dimensions.
-        If the model returns a different dimension count, the function will raise a ValueError.
-    """
-    embeddings_model = settings.EMBEDDINGS_MODEL
-    if not embeddings_model:
-        raise ValueError("EMBEDDINGS_MODEL is not set")
-    try:
-        response = ollama.embeddings(model=embeddings_model, prompt=text)
-        embedding = response.get("embedding")
-        if embedding is None or len(embedding) != 768:
-            raise ValueError(f"Invalid embedding received for text: {text}")
-        return [embedding]
-    except Exception as err:
-        pipeline_logger.error(f"Error generating embedding for text: {text}, error={str(err)}")
 
 
 def text_embedding(prompt: str) -> list[float]:

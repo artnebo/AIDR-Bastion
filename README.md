@@ -687,7 +687,6 @@ This project is built using the following powerful open-source libraries and fra
 - **[Uvicorn](https://www.uvicorn.org/)** - Lightning-fast ASGI server implementation
 - **[PyYAML](https://pyyaml.org/)** - YAML parser and emitter for Python
 - **[NLTK](https://www.nltk.org/)** - Natural Language Toolkit for text processing
-- **[Ollama](https://ollama.ai/)** - Local LLM inference engine for running large language models locally
 
 
 ## 🛠️ TO-DO List
