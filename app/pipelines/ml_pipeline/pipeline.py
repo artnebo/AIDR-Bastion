@@ -36,7 +36,7 @@ class MLPipeline(BasePipeline):
         self.model_classifier = self._load_model()
         if self.model_classifier:
             self.enabled = True
-            pipeline_logger.info(f"[{self}] loaded successfully. Model path: {settings.ML_PIPELINE_PATH}")
+            pipeline_logger.info(f"[{self}] loaded successfully. Model path: {settings.ML_MODEL_PATH}")
 
     def __str__(self) -> str:
         return "ML Pipeline"
