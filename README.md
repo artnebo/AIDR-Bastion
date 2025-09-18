@@ -4,10 +4,10 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.2-green.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/license-LGPL%20v3-blue.svg)](LICENSE)
 
-A comprehensive GenAI protection system designed to protect against malicious prompts, injection attacks, and harmful content. System incorporates multiple engines that operate in sequence to analyze and classify user inputs before they reach GenAI applications.
+A comprehensive GenAI protection system designed to protect against malicious prompts, injection attacks, and harmful content. The system incorporates multiple engines that operate sequentially to analyze and classify user inputs before reaching GenAI applications.
 
 - SOC Prime [Uncoder AI](https://tdm.socprime.com/uncoder-ai/) integration enables translation of Sigma rules into Semgrep format, providing standardized and reusable detection logic (a free account is required).
-- Regex-based pipeline is powered by [Roota](https://github.com/UncoderIO/Roota) rules. 
+- The regex-based pipeline is powered by [Roota](https://github.com/UncoderIO/Roota) rules. 
 - The architecture supports rule extensibility, enabling the addition of custom signatures, third-party rule sets, and organization-specific detection logic.
 - Actions include allow, block, or notify, depending on rule matches and policy configuration.
 - This layered detection approach ensures defense-in-depth against evolving adversarial prompt engineering techniques.
@@ -16,10 +16,10 @@ Inspired by LlamaFirewall.
 
 ## 🚀 Features
 
-- **Multi-Pipeline Detection**: Regex patterns, ML models, vector based similarity detection, and LLM-based analysis
+- **Multi-Pipeline Detection**: Regex patterns, ML models, vector-based similarity detection, and LLM-based analysis
 - **Flexible Configuration**: Dynamic Pipeline configuration via JSON
 - **Real-time Analysis**: Fast async processing with configurable thresholds
-- **OpenSearch Integration**: Vector based similarity search for prompt classification
+- **OpenSearch Integration**: Vector-based similarity search for prompt classification
 - **RESTful API**: Easy integration with existing applications
 - **Extensible Architecture**: Simple plugin system for custom Pipelines
 
@@ -56,14 +56,17 @@ Inspired by LlamaFirewall.
 
 ## 📋 Table of Contents
 
-- [Installation](#-installation)
-- [Configuration](#-configuration)
+- [Installation](#%EF%B8%8F-installation)
+- [Configuration](#%EF%B8%8F-configuration)
 - [Usage](#-usage)
 - [API Reference](#-api-reference)
 - [Pipelines](#-pipelines)
 - [Rule Management and Customization](#-rule-management-and-customization)
 - [Adding Custom Pipelines](#-adding-custom-pipelines)
 - [Development](#-development)
+- [License](#-license)
+- [Built With](#%EF%B8%8F-built-with)
+- [TO-DO List](#%EF%B8%8F-to-do-list)
 
 ## 🛠️ Installation
 
@@ -138,7 +141,7 @@ OS__SCHEME=
 OS__USER=
 OS__PASSWORD=
 
-# requires for create embedding in pipelines: Similarity Pipeline and ML Pipeline
+# requires for creating embedding in pipelines: Similarity Pipeline and ML Pipeline
 EMBEDDINGS_MODEL=
 ```
 
@@ -688,10 +691,6 @@ This project is built using the following powerful open-source libraries and fra
 
 ## 🛠️ TO-DO List
 
-- **API integration with SOC Prime platform for automatic rule uploads**
+- **API integration with the SOC Prime platform for automatic rule uploads**
 - **Add support for local database storage of rules and events**
 - **Add an admin panel for managing events and rules**
-
----
-
-**AIDR Bastion** - GenAI protection system. 🛡️
