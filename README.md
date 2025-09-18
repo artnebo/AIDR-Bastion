@@ -77,8 +77,8 @@ Inspired by LlamaFirewall.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-org/guardian-of-the-blind.git
-   cd guardian-of-the-blind
+   git clone https://github.com/0xAIDR/AIDR-Bastion.git
+   cd AIDR-Bastion
    ```
 
 2. **Create virtual environment**
