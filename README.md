@@ -5,14 +5,17 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.2-green.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/license-LGPL%20v3-blue.svg)](LICENSE)
 
-A comprehensive GenAI protection system designed to protect against malicious prompts, injection attacks, and harmful content. The system incorporates multiple engines that operate sequentially to analyze and classify user inputs before reaching GenAI applications.
+A comprehensive GenAI protection system designed to safeguard against malicious prompts, injection attacks, and harmful content. The system incorporates multiple detection engines that operate sequentially to analyze and classify user inputs before reaching GenAI applications.
 
-- SOC Prime [Uncoder AI](https://tdm.socprime.com/uncoder-ai/) integration enables translation of Sigma rules into Semgrep format, providing standardized and reusable detection logic (a free account is required).
-- The regex-based pipeline is powered by [Roota](https://github.com/UncoderIO/Roota) rules. 
-- The architecture supports rule extensibility, enabling the addition of custom signatures, third-party rule sets, and organization-specific detection logic.
+- The system supports [Roota](https://github.com/UncoderIO/Roota) and [Sigma rules](https://sigmahq.io/docs/guide/about.html), enabling the application of detection logic from multiple sources such as [SigmaHQ](https://github.com/SigmaHQ/sigma) (around 1,200 free community Sigma rules available at release), [SOC Prime](https://tdm.socprime.com/) (with up to 3,000 additional rules), and other third-party repositories. Sigma rules can be applied to detect use cases where malware leverages a local LLM to generate malicious code for execution.
+- SOC Prime [Uncoder AI](https://tdm.socprime.com/uncoder-ai/) integration further extends functionality by translating Sigma rules into Semgrep format, providing standardized and reusable detection pipelines (requires a free account).
+- Roota rules power the regex-based pipeline.
+- The architecture supports rule extensibility, seamlessly integrating organization-specific signatures and external detection content.
+- The system can also function as a local logging sensor, recording user and agent prompts and enabling diagnostics, incident discovery, and cyber attack investigation.
+- Detection logic aligns with industry frameworks such as [MITRE ATLAS](https://atlas.mitre.org/) and [OWASP Top 10 for LLMs](https://owasp.org/www-project-top-10-for-large-language-model-applications/), ensuring standardized coverage against adversarial techniques.
 - Actions include allow, block, or notify, depending on rule matches and policy configuration.
-- This layered detection approach ensures defense-in-depth against evolving adversarial prompt engineering techniques.
 
+This layered detection approach delivers defense-in-depth against evolving adversarial prompt engineering and other AI-focused attack vectors.
 Inspired by LlamaFirewall.
 
 ## 🚀 Features
@@ -295,7 +298,7 @@ Runs pipelines to analyze the input prompt.
 
 ### GET /api/v1/flows
 
-Get list of all available flows and their pipelines.
+Get a list of all available flows and their pipelines.
 
 **Response:**
 ```json
@@ -330,7 +333,7 @@ Get list of all available flows and their pipelines.
 - **Best for**: Known attack patterns and simple text analysis
 
 ### 2. Similarity Pipeline (`similarity`)
-- **Purpose**: Vector based similarity detection against known harmful prompts
+- **Purpose**: Vector-based similarity detection against known harmful prompts
 - **Backend**: OpenSearch with vector search
 - **Required**: OpenSearch configuration
 - **Configuration**: `SIMILARITY_NOTIFY_THRESHOLD`, `SIMILARITY_BLOCK_THRESHOLD`
@@ -345,7 +348,7 @@ Get list of all available flows and their pipelines.
 ### 4. ML Pipeline (`ml`)
 - **Purpose**: Machine learning-based classification
 - **Configuration**: Requires `ML_PIPELINE_PATH`
-- **Model**: Custom trained model for prompt classification
+- **Model**: Custom-trained model for prompt classification
 - **Best for**: General malicious content detection
 - **Required**: Configured environment `EMBEDDINGS_MODEL`
 
@@ -360,7 +363,7 @@ Get list of all available flows and their pipelines.
 
 ### YAML Rules for Regex Pipeline
 
-The Regex Pipeline uses [Roota](https://github.com/UncoderIO/Roota) rules files to define detection patterns. Roota is a public-domain language for collective cyber defense that combines native queries from SIEM, EDR, XDR, or Data Lake with standardized metadata and threat intelligence to enable automated translation into other languages.
+The Regex Pipeline defines detection patterns using [Roota](https://github.com/UncoderIO/Roota) rules files. Roota is a public-domain language for collective cyber defense that combines native queries from SIEM, EDR, XDR, or Data Lake with standardized metadata and threat intelligence to enable automated translation into other languages.
 
 Each rule file follows a specific structure:
 
@@ -657,7 +660,7 @@ class PipelineNames(str, Enum):
    python app/pipelines/similarity_pipeline/index_script.py
    ```
    
-   This will create the `similarity-prompt-index` index in OpenSearch. You can customize the index name by setting the SIMILARITY_PROMPT_INDEX environment variable
+   This will create the `similarity-prompt-index` index in OpenSearch. You can customize the index name by setting the SIMILARITY_PROMPT_INDEX environment variable.
 
 #### Rule Management
 - **test_rules.py**: Comprehensive rule testing and validation
@@ -691,6 +694,9 @@ This project is built using the following powerful open-source libraries and fra
 
 ## 🛠️ TO-DO List
 
-- **API integration with the SOC Prime platform for automatic rule uploads**
-- **Add support for local database storage of rules and events**
-- **Add an admin panel for managing events and rules**
+- Integrate API with SOC Prime for automatic rule synchronization and uploads
+- Add local database storage for rules and events
+- Add Kafka support for scalable event streaming
+- Develop an admin panel for managing events and detection rules
+- Explore integration with [NOVA Rules](https://github.com/fr0gger/nova-framework/tree/main/nova_rules) to extend rule sources
+
