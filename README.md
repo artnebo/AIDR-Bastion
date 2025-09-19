@@ -148,21 +148,39 @@ EMBEDDINGS_MODEL=
 
 ### Pipeline Configuration (config.json)
 
-The `config.json` file controls which Pipelines are active for each flow:
+The `config.json` file controls which Pipelines are active for each flow.
+Default `config.json` configuraton:
 
 ```json
 [
     {
-        "pipeline_flow": "security_audit",
+        "pipeline_flow": "full_scan",
         "pipelines": [
             "similarity",
-            "regex"
+            "regex",
+            "openai",
+            "ml",
+            "code_analysis"
         ]
     },
     {
         "pipeline_flow": "code_audit",
         "pipelines": [
             "code_analysis"
+        ]
+    },
+    {
+        "pipeline_flow": "model_audit",
+        "pipelines": [
+            "ml",
+            "openai"
+        ]
+    },
+    {
+        "pipeline_flow": "base_audit",
+        "pipelines": [
+            "regex",
+            "similarity"
         ]
     }
 ]
