@@ -39,6 +39,8 @@ class SimilarityPipeline(BasePipeline):
         if settings.OS and os_client.client:
             self.enabled = True
             pipeline_logger.info(f"[{self}] loaded successfully. OpenSearch: {settings.OS.host}")
+        else:
+            pipeline_logger.error(f"[{self}] failed to load OpenSearch client. OpenSearch: {settings.OS.host}")
 
     def __split_prompt_into_sentences(self, prompt: str) -> list[str]:
         """

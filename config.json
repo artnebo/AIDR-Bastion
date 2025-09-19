@@ -5,19 +5,28 @@
             "similarity",
             "regex",
             "openai",
-            "ml"
+            "ml",
+            "code_analysis"
         ]
     },
     {
         "pipeline_flow": "code_audit",
         "pipelines": [
-            "code"
+            "code_analysis"
         ]
     },
     {
-        "pipeline_flow": "ml_audit",
+        "pipeline_flow": "model_audit",
         "pipelines": [
-            "ml"
+            "ml",
+            "openai"
+        ]
+    },
+    {
+        "pipeline_flow": "base_audit",
+        "pipelines": [
+            "regex",
+            "similarity"
         ]
     }
 ]

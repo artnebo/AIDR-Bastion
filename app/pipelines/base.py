@@ -116,6 +116,8 @@ class BaseRulesPipeline(BasePipeline):
         if len(self._rules) > 0:
             self.enabled = True
             pipeline_logger.info(f"[{self}] loaded successfully. Total rules: {len(self._rules)}")
+        else:
+            pipeline_logger.error(f"[{self}] failed to load rules. Total rules: {len(self._rules)}")
 
     def _load_rules(self) -> None:
         """
