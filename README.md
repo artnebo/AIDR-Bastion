@@ -717,4 +717,4 @@ This project is built using the following powerful open-source libraries and fra
 - Add Kafka support for scalable event streaming
 - Develop an admin panel for managing events and detection rules
 - Explore integration with [NOVA Rules](https://github.com/fr0gger/nova-framework/tree/main/nova_rules) to extend rule sources
-
+- Add YARA-L support
