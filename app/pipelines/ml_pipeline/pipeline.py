@@ -37,6 +37,8 @@ class MLPipeline(BasePipeline):
         if self.model_classifier:
             self.enabled = True
             pipeline_logger.info(f"[{self}] loaded successfully. Model path: {settings.ML_MODEL_PATH}")
+        else:
+            pipeline_logger.error(f"[{self}] failed to load model. Model path: {settings.ML_MODEL_PATH}")
 
     def __str__(self) -> str:
         return "ML Pipeline"
@@ -51,6 +53,8 @@ class MLPipeline(BasePipeline):
         Returns:
             Classification model or None on loading error
         """
+        if not settings.ML_MODEL_PATH:
+            return None
         try:
             return joblib.load(settings.ML_PIPELINE_PATH)
         except Exception as err:

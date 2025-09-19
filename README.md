@@ -162,7 +162,7 @@ The `config.json` file controls which Pipelines are active for each flow:
     {
         "pipeline_flow": "code_audit",
         "pipelines": [
-            "code"
+            "code_analysis"
         ]
     }
 ]
@@ -336,7 +336,7 @@ Get list of all available flows and their pipelines.
 - **Configuration**: `SIMILARITY_NOTIFY_THRESHOLD`, `SIMILARITY_BLOCK_THRESHOLD`
 - **Best for**: Detecting variations of known attacks
 
-### 3. Code Analysis Pipeline (`code`)
+### 3. Code Analysis Pipeline (`code_analysis`)
 - **Purpose**: Static code analysis using Semgrep
 - **Languages**: Python, JavaScript, Java, C++, and more
 - **Rules**: Security-focused patterns

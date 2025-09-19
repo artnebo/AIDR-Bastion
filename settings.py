@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: Optional[str] = None
     OPENAI_MODEL: Optional[str] = None
 
-    ML_PIPELINE_PATH: Optional[str] = None
+    ML_MODEL_PATH: Optional[str] = None
 
 
 def load_pipeline_config() -> dict:
