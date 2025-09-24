@@ -155,6 +155,15 @@ KAFKA__SASL_PASSWORD=
 
 # requires for creating embedding in pipelines: Similarity Pipeline and ML Pipeline
 EMBEDDINGS_MODEL=
+
+## Kafka configuration
+# KAFKA__BOOTSTRAP_SERVERS=
+# KAFKA__TOPIC=
+# KAFKA__SECURITY_PROTOCOL=PLAINTEXT
+# KAFKA__SASL_MECHANISM=
+# KAFKA__SASL_USERNAME=
+# KAFKA__SASL_PASSWORD=
+# KAFKA__SAVE_PROMPT=true 
 ```
 
 ### Pipeline Configuration (config.json)
@@ -695,12 +704,27 @@ AIDR Bastion supports Kafka integration for logging BLOCK and NOTIFY events, ena
 #### Quick Start with Docker Compose
 
 **Configure environment variables**
+Minimal required environments
 ```bash
 # Add to your .env file
 KAFKA__BOOTSTRAP_SERVERS=localhost:9092
 KAFKA__TOPIC=aidr-events
 KAFKA__SECURITY_PROTOCOL=PLAINTEXT
 ```
+
+Full Kafka environment variables
+```bash
+## Kafka configuration
+# KAFKA__BOOTSTRAP_SERVERS=
+# KAFKA__TOPIC=
+# KAFKA__SECURITY_PROTOCOL=PLAINTEXT
+# KAFKA__SASL_MECHANISM=
+# KAFKA__SASL_USERNAME=
+# KAFKA__SASL_PASSWORD=
+# KAFKA__SAVE_PROMPT=true 
+```
+
+The environment variable `KAFKA__SAVE_PROMPT` is optional. It controls whether the input prompt data should be saved to Kafka or not.
 
 #### Event Logging Features
 
