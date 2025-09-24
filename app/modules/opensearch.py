@@ -34,33 +34,6 @@ class AsyncOpenSearchClient:
         """
         self._os_settings = os_settings
         self.similarity_prompt_index = similarity_prompt_index
-        self._client = None
-
-    @property
-    def client(self) -> AsyncOpenSearch:
-        """
-        Returns current OpenSearch client.
-
-        Returns:
-            AsyncOpenSearch: Asynchronous OpenSearch client
-
-        Raises:
-            AttributeError: If client is not initialized
-        """
-        return self._client
-
-    async def connect(self) -> None:
-        """
-        Establishes connection with OpenSearch server.
-
-        Creates asynchronous connection to OpenSearch, configures connection parameters
-        and checks server availability. Logs errors if connection fails.
-
-        Raises:
-            Exception: On failed connection or OpenSearch error
-        """
-        if not self._os_settings:
-            return
         self._client = AsyncOpenSearch(
             hosts=[{"host": self._os_settings.host, "port": self._os_settings.port}],
             scheme=self._os_settings.scheme,
@@ -75,6 +48,31 @@ class AsyncOpenSearchClient:
             max_retries=3,
         )
 
+    @property
+    def client(self) -> AsyncOpenSearch:
+        """
+        Returns current OpenSearch client.
+
+        Returns:
+            AsyncOpenSearch: Asynchronous OpenSearch client
+
+        Raises:
+            AttributeError: If client is not initialized
+        """
+        return self._client
+
+    async def check_connection(self) -> None:
+        """
+        Establishes connection with OpenSearch server.
+
+        Creates asynchronous connection to OpenSearch, configures connection parameters
+        and checks server availability. Logs errors if connection fails.
+
+        Raises:
+            Exception: On failed connection or OpenSearch error
+        """
+        if not self._os_settings:
+            return
         try:
             is_connected = await self._client.ping()
             if not is_connected:

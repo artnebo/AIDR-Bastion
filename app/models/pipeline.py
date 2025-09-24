@@ -5,6 +5,7 @@ from app.core.enums import ActionStatus, RuleAction
 
 class TaskRequest(BaseModel):
     prompt: str
+    task_id: str | int | None = None
     pipeline_flow: str = "default"
 
 

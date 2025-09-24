@@ -10,3 +10,4 @@ semgrep==1.122.0
 einops==0.8.1
 nltk>=3.9
 sentence-transformers==4.1.0
+confluent-kafka==2.3.0

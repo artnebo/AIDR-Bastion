@@ -1,9 +1,11 @@
 import asyncio
+from datetime import datetime
 
 from app.core.enums import ActionStatus
 from app.models.pipeline import PipelineResult, TaskResult
 from app.pipelines.base import BasePipeline
 from app.utils import get_pipelines_from_config
+from app.modules.kafka_client import KafkaClient
 from settings import get_settings
 
 
@@ -23,8 +25,12 @@ class PipelineManager:
         Loads pipeline configuration from settings and creates a mapping of
         pipeline flows to their corresponding pipeline instances.
         """
-        pipelines_config: list[dict] = get_settings().PIPELINE_CONFIG
+        self.settings = get_settings()
+        pipelines_config: list[dict] = self.settings.PIPELINE_CONFIG
         self.pipeline_flows: dict[str, list[BasePipeline]] = get_pipelines_from_config(pipelines_config)
+
+        if self.settings.KAFKA:
+            self.kafka_client = KafkaClient()
 
     def __task_status(self, task_result: list[PipelineResult]) -> ActionStatus:
         """
@@ -47,7 +53,23 @@ class PipelineManager:
             return ActionStatus.NOTIFY
         return ActionStatus.ALLOW
 
-    async def run_pipeline(self, prompt: str, pipeline_flow: str) -> TaskResult:
+    def __send_to_kafka(self, prompt: str, task: TaskResult, task_id: str | int | None = None):
+        if task.status in (ActionStatus.BLOCK, ActionStatus.NOTIFY):
+            payload = task.model_dump()
+            payload.update(
+                {
+                    "service": self.settings.PROJECT_NAME,
+                    "version": self.settings.VERSION,
+                    "timestamp": datetime.now().isoformat(),
+                }
+            )
+            if self.settings.KAFKA.save_prompt:
+                payload["prompt"] = prompt
+            if task_id:
+                payload["task_id"] = task_id
+            self.kafka_client.send_message(payload)
+
+    async def run_pipeline(self, prompt: str, pipeline_flow: str, task_id: str | int | None = None) -> TaskResult:
         """
         Executes the task process for a given prompt using the specified pipeline flow.
 
@@ -68,7 +90,9 @@ class PipelineManager:
             result for result in pipeline_results if result.status in (ActionStatus.BLOCK, ActionStatus.NOTIFY)
         ]
         status = self.__task_status(pipelines_result)
-        return TaskResult(status=status, pipelines=pipelines_result)
+        task = TaskResult(status=status, pipelines=pipelines_result)
+        self.__send_to_kafka(prompt=prompt, task_id=task_id, task=task)
+        return task
 
 
 pipeline_manager: PipelineManager = PipelineManager()

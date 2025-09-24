@@ -18,6 +18,35 @@ class OpenSearchSettings(BaseModel):
     pool_size: int = 10
 
 
+class KafkaSettings(BaseModel):
+    bootstrap_servers: str
+    topic: str
+    security_protocol: str = "PLAINTEXT"
+    sasl_mechanism: Optional[str] = None
+    sasl_username: Optional[str] = None
+    sasl_password: Optional[str] = None
+    save_prompt: bool = False
+
+
+def _load_version() -> str:
+    """
+    Load version from VERSION file.
+
+    Returns:
+        str: Version string from VERSION file, or "unknown" if file not found
+    """
+    version_path = Path("VERSION")
+    if not version_path.exists():
+        return "unknown"
+
+    try:
+        with open(version_path, "r", encoding="utf-8") as f:
+            return f.read().strip()
+    except Exception as e:
+        pipeline_logger.error(f"Error reading VERSION file: {e}")
+        return "unknown"
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -29,12 +58,14 @@ class Settings(BaseSettings):
     # API Settings
     API_V1_STR: str = "/api/v1"
     PROJECT_NAME: str = "AIDR Bastion"
+    VERSION: str = Field(default_factory=lambda: _load_version())
 
     # Server Settings
     HOST: str = "0.0.0.0"
     PORT: int = 8000
 
     OS: Optional[OpenSearchSettings] = None
+    KAFKA: Optional[KafkaSettings] = None
     PIPELINE_CONFIG: dict = Field(default_factory=dict)
 
     SIMILARITY_PROMPT_INDEX: str = "similarity-prompt-index"
