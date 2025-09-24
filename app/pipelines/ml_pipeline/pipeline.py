@@ -99,7 +99,7 @@ class MLPipeline(BasePipeline):
         if self.validate_prompt(prompt):
             msg = "ML Pipeline detected malicious prompt"
             trigger_rules.append(
-                TriggeredRuleData(id=self.name, name=self.name, details=msg, body=prompt, action=RuleAction.BLOCK)
+                TriggeredRuleData(id=self.name, name=self.name, details=msg, action=RuleAction.BLOCK)
             )
             pipeline_logger.info(f"Analyzing for {self.name}, status: {ActionStatus.BLOCK}, details: {msg}")
         pipeline_logger.info(f"Analyzing done for {self.name}")

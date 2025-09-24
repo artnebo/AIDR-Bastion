@@ -158,7 +158,6 @@ Return only a JSON object in the following format:
                     id=self.name,
                     name=self.name,
                     details=analysis.get("reason"),
-                    body=original_text,
                     action=ActionStatus(analysis.get("status")),
                 )
             )

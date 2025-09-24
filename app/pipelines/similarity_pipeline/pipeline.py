@@ -33,7 +33,7 @@ class SimilarityPipeline(BasePipeline):
         if os_client.client is None:
             pipeline_logger.error(f"[{self}] OpenSearch client is not initialized")
             return
-        if not settings.OS:
+        elif not settings.OS:
             pipeline_logger.error(f"[{self}] OpenSearch settings are not specified in environment variables")
             return
         if settings.OS and os_client.client:

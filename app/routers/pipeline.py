@@ -14,7 +14,9 @@ pipeline_router = APIRouter(prefix="/api/v1", tags=["pipeline"])
 
 @pipeline_router.post("/run_pipeline")
 async def run_pipeline(request: TaskRequest) -> TaskResult:
-    task_result = await pipeline_manager.run_pipeline(prompt=request.prompt, pipeline_flow=request.pipeline_flow)
+    task_result = await pipeline_manager.run_pipeline(
+        prompt=request.prompt, pipeline_flow=request.pipeline_flow, task_id=request.task_id
+    )
     return task_result
 
 

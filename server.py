@@ -15,7 +15,7 @@ settings = get_settings()
 @asynccontextmanager
 async def lifespan(app_: FastAPI):
     if settings.OS:
-        await os_client.connect()
+        await os_client.check_connection()
     yield
     if settings.OS:
         await os_client.close()
