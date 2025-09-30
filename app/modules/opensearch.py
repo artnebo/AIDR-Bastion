@@ -80,6 +80,8 @@ class AsyncOpenSearchClient:
             is_connected = await self._client.ping()
             if not is_connected:
                 raise Exception("Failed to connect to OpenSearch")
+            if not await self._client.indices.exists(index=self.similarity_prompt_index):
+                raise Exception(f"Index `{self.similarity_prompt_index}` does not exist.")
         except Exception as e:
             error_msg = f"Failed to connect to OpenSearch. Error: {str(e)}"
             pipeline_logger.exception(f"[{self._os_settings.host}] {error_msg}")
