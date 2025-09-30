@@ -78,7 +78,7 @@ class MLPipeline(BasePipeline):
                 predict = self.model_classifier.predict(embedding)
                 return predict
         except Exception as err:
-            pipeline_logger.error(f"Error validating prompt, error={str(err)}")
+            pipeline_logger.warning(f"Error validating prompt, error={str(err)}")
 
     async def run(self, prompt: str) -> PipelineResult:
         """

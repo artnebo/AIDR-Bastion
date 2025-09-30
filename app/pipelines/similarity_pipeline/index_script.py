@@ -11,6 +11,7 @@ from app.modules.logger import pipeline_logger  # noqa: E402
 from app.modules.opensearch import os_client  # noqa: E402
 from app.pipelines.similarity_pipeline.const import INDEX_MAPPING, PROMPTS_EXAMPLES  # noqa: E402
 from settings import get_settings  # noqa: E402
+from app.utils import text_embedding  # noqa: E402
 
 settings = get_settings()
 
@@ -23,7 +24,6 @@ async def create_index():
         bool: True if index was created successfully, False otherwise
     """
     try:
-        await os_client.connect()
 
         if await os_client.client.indices.exists(index=os_client.similarity_prompt_index):
             pipeline_logger.info(f"Index {os_client.similarity_prompt_index} already exists")
@@ -37,8 +37,6 @@ async def create_index():
     except Exception as e:
         pipeline_logger.error(f"Error creating index: {e}")
         return False
-    finally:
-        await os_client.close()
 
 
 async def upload_prompts_examples():
@@ -49,17 +47,16 @@ async def upload_prompts_examples():
         bool: True if upload was successful, False otherwise
     """
     try:
-        await os_client.connect()
 
         if not await os_client.client.indices.exists(index=os_client.similarity_prompt_index):
             pipeline_logger.info("Index does not exist, creating it first...")
             await os_client.close()
             if not await create_index():
                 return False
-            await os_client.connect()
 
         docs = [asdict(doc) for doc in PROMPTS_EXAMPLES]
         for doc in docs:
+            doc["vector"] = text_embedding(doc["text"])
             await os_client.client.index(os_client.similarity_prompt_index, body=doc)
 
         pipeline_logger.info(f"Uploaded {len(docs)} example prompts to index")
@@ -68,8 +65,6 @@ async def upload_prompts_examples():
     except Exception as e:
         pipeline_logger.error(f"Error uploading prompts: {e}")
         return False
-    finally:
-        await os_client.close()
 
 
 async def check_index_exists() -> bool:
@@ -80,16 +75,12 @@ async def check_index_exists() -> bool:
         dict: Index status information
     """
     try:
-        await os_client.connect()
-
         if not await os_client.client.indices.exists(index=os_client.similarity_prompt_index):
             return False
         return True
     except Exception as e:
         pipeline_logger.error(f"Error checking index: {e}")
         return False
-    finally:
-        await os_client.close()
 
 
 async def main():
@@ -98,19 +89,23 @@ async def main():
     """
     pipeline_logger.info("Starting index creation and data upload...")
 
-    status = await check_index_exists()
-    pipeline_logger.info(f"Current index exist: {'yes' if status else 'no'}")
+    try:
+        status = await check_index_exists()
+        pipeline_logger.info(f"Current index exist: {'yes' if status else 'no'}")
 
-    if await create_index():
-        pipeline_logger.info("Index creation completed successfully")
-    else:
-        pipeline_logger.error("Failed to create index")
-        return
+        if not status:
+            if await create_index():
+                pipeline_logger.info("Index creation completed successfully")
+            else:
+                pipeline_logger.error("Failed to create index")
+                return
 
-    if await upload_prompts_examples():
-        pipeline_logger.info("Data upload completed successfully")
-    else:
-        pipeline_logger.error("Failed to upload data")
+        if await upload_prompts_examples():
+            pipeline_logger.info("Data upload completed successfully")
+        else:
+            pipeline_logger.error("Failed to upload data")
+    finally:
+        await os_client.close()
 
 
 if __name__ == "__main__":

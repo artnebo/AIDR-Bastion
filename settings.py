@@ -73,9 +73,16 @@ class Settings(BaseSettings):
     SIMILARITY_NOTIFY_THRESHOLD: float = 0.7
     SIMILARITY_BLOCK_THRESHOLD: float = 0.87
 
-    CORS_ORIGINS: list[str] = Field(default=["*"], env="CORS_ORIGINS", description="List of allowed origins for CORS")
+    CORS_ORIGINS: list[str] = Field(
+        default=["*"],
+        env="CORS_ORIGINS",
+        description="List of allowed origins for CORS"
+    )
 
-    EMBEDDINGS_MODEL: Optional[str] = None
+    EMBEDDINGS_MODEL: Optional[str] = Field(
+        default="nomic-ai/nomic-embed-text-v1.5",
+        description="Model for embeddings"
+    )
 
     OPENAI_API_KEY: Optional[str] = None
     OPENAI_MODEL: Optional[str] = None
