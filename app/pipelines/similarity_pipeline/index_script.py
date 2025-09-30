@@ -1,10 +1,16 @@
 import asyncio
+import sys
 from dataclasses import asdict
+from pathlib import Path
 
-from app.modules.logger import pipeline_logger
-from app.modules.opensearch import os_client
-from app.pipelines.similarity_pipeline.const import INDEX_MAPPING, PROMPTS_EXAMPLES
-from settings import get_settings
+# Add project root to Python path
+project_root = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+from app.modules.logger import pipeline_logger  # noqa: E402
+from app.modules.opensearch import os_client  # noqa: E402
+from app.pipelines.similarity_pipeline.const import INDEX_MAPPING, PROMPTS_EXAMPLES  # noqa: E402
+from settings import get_settings  # noqa: E402
 
 settings = get_settings()
 
