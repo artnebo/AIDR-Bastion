@@ -34,19 +34,22 @@ class AsyncOpenSearchClient:
         """
         self._os_settings = os_settings
         self.similarity_prompt_index = similarity_prompt_index
-        self._client = AsyncOpenSearch(
-            hosts=[{"host": self._os_settings.host, "port": self._os_settings.port}],
-            scheme=self._os_settings.scheme,
-            http_auth=(self._os_settings.user, self._os_settings.password),
-            use_ssl=True,
-            verify_certs=False,
-            ssl_show_warn=False,
-            retry_on_status=(500, 502, 503, 504),
-            retry_on_timeout=True,
-            timeout=30,
-            pool_maxsize=self._os_settings.pool_size,
-            max_retries=3,
-        )
+        if self._os_settings:
+            self._client = AsyncOpenSearch(
+                hosts=[{"host": self._os_settings.host, "port": self._os_settings.port}],
+                scheme=self._os_settings.scheme,
+                http_auth=(self._os_settings.user, self._os_settings.password),
+                use_ssl=True,
+                verify_certs=False,
+                ssl_show_warn=False,
+                retry_on_status=(500, 502, 503, 504),
+                retry_on_timeout=True,
+                timeout=30,
+                pool_maxsize=self._os_settings.pool_size,
+                max_retries=3,
+            )
+        else:
+            raise Exception("OpenSearch settings are not specified in environment variables")
 
     @property
     def client(self) -> AsyncOpenSearch:

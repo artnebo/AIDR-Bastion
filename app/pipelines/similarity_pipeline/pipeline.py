@@ -30,7 +30,7 @@ class SimilarityPipeline(BasePipeline):
 
     def __init__(self):
         super().__init__()
-        if os_client.client is None:
+        if not hasattr(os_client, "client") or os_client.client is None:
             pipeline_logger.error(f"[{self}] OpenSearch client is not initialized")
             return
         elif not settings.OS:
