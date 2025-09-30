@@ -79,6 +79,10 @@ class Settings(BaseSettings):
 
     OPENAI_API_KEY: Optional[str] = None
     OPENAI_MODEL: Optional[str] = None
+    OPENAI_BASE_URL: Optional[str] = Field(
+        default="https://api.openai.com/v1",
+        description="Default base URL for OpenAI ChatGPT API"
+    )
 
     ML_MODEL_PATH: Optional[str] = None
 

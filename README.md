@@ -130,6 +130,7 @@ ML_MODEL_PATH=
 # model by default gpt-4
 OPENAI_API_KEY=
 OPENAI_MODEL=
+OPENAI_BASE_URL=
 
 # Similarity Pipeline
 # similarity-prompt-index by default

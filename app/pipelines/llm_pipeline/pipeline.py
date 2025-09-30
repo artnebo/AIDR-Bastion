@@ -62,7 +62,7 @@ Return only a JSON object in the following format:
         self.model = model
         if settings.OPENAI_API_KEY:
             self.enabled = True
-            self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+            self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY, base_url=settings.OPENAI_BASE_URL)
             pipeline_logger.info(f"[{self}] loaded successfully. Model: {self.model}")
         else:
             pipeline_logger.error(f"[{self}] failed to load model. Model: {self.model}")
