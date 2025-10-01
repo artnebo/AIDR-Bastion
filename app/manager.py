@@ -31,6 +31,8 @@ class PipelineManager:
 
         if self.settings.KAFKA:
             self.kafka_client = KafkaClient()
+        else:
+            self.kafka_client = None
 
     def __task_status(self, task_result: list[PipelineResult]) -> ActionStatus:
         """
@@ -54,6 +56,8 @@ class PipelineManager:
         return ActionStatus.ALLOW
 
     def __send_to_kafka(self, prompt: str, task: TaskResult, task_id: str | int | None = None):
+        if not self.kafka_client:
+            return
         if task.status in (ActionStatus.BLOCK, ActionStatus.NOTIFY):
             payload = task.model_dump()
             payload.update(
