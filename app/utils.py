@@ -36,10 +36,10 @@ def get_pipelines_from_config(configs: list[dict]) -> dict[str, list["BasePipeli
         Dictionary with categories and pipeline instances
     """
     # Import here to avoid circular imports
-    from app.pipelines import ENABLED_PIPELINES_MAP, PIPELINES_MAP
+    from app.pipelines import ENABLED_PIPELINES_MAP
 
     result = {}
-
+    skipped_pipelines = set()
     for config in configs:
         pipelines = []
         flow_name = config.get("pipeline_flow")
@@ -47,14 +47,12 @@ def get_pipelines_from_config(configs: list[dict]) -> dict[str, list["BasePipeli
             try:
                 pipelines.append(ENABLED_PIPELINES_MAP[pipeline_name])
             except KeyError:
-                if pipeline := PIPELINES_MAP.get(pipeline_name):
-                    msg = f"{pipeline} is not enabled! Please enable it in the configuration."
-                else:
-                    msg = f"{pipeline_name} not found in Pipelines. Please check the pipeline name in the README or enum app/core/enums.py."
-                pipeline_logger.error(msg)
+                skipped_pipelines.add(pipeline_name)
         if flow_name and pipelines:
             result[flow_name] = pipelines
     result["default"] = list(ENABLED_PIPELINES_MAP.values())
+    if skipped_pipelines:
+        pipeline_logger.warning(f"Skipped pipelines: {', '.join(skipped_pipelines)}")
     return result
 
 
