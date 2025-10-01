@@ -31,9 +31,10 @@ class KafkaClient:
         """
         settings = get_settings()
         self._kafka_settings: KafkaSettings = settings.KAFKA
-        self.topic = self._kafka_settings.topic
-        self._producer = None
-        self.connect()
+        if self._kafka_settings and hasattr(self._kafka_settings, "topic"):
+            self.topic = self._kafka_settings.topic
+            self._producer = None
+            self.connect()
 
     @property
     def producer(self) -> Producer:

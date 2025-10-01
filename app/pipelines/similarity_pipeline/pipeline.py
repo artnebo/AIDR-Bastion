@@ -30,17 +30,17 @@ class SimilarityPipeline(BasePipeline):
 
     def __init__(self):
         super().__init__()
-        if os_client.client is None:
-            pipeline_logger.error(f"[{self}] OpenSearch client is not initialized")
+        if not hasattr(os_client, "client") or os_client.client is None:
+            pipeline_logger.warning(f"[{self}] OpenSearch client is not initialized")
             return
         elif not settings.OS:
-            pipeline_logger.error(f"[{self}] OpenSearch settings are not specified in environment variables")
+            pipeline_logger.warning(f"[{self}] OpenSearch settings are not specified in environment variables")
             return
         if settings.OS and os_client.client:
             self.enabled = True
             pipeline_logger.info(f"[{self}] loaded successfully. OpenSearch: {settings.OS.host}")
         else:
-            pipeline_logger.error(f"[{self}] failed to load OpenSearch client. OpenSearch: {settings.OS.host}")
+            pipeline_logger.warning(f"[{self}] failed to load OpenSearch client. OpenSearch: {settings.OS.host}")
 
     def __split_prompt_into_sentences(self, prompt: str) -> list[str]:
         """

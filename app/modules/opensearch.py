@@ -34,19 +34,22 @@ class AsyncOpenSearchClient:
         """
         self._os_settings = os_settings
         self.similarity_prompt_index = similarity_prompt_index
-        self._client = AsyncOpenSearch(
-            hosts=[{"host": self._os_settings.host, "port": self._os_settings.port}],
-            scheme=self._os_settings.scheme,
-            http_auth=(self._os_settings.user, self._os_settings.password),
-            use_ssl=True,
-            verify_certs=False,
-            ssl_show_warn=False,
-            retry_on_status=(500, 502, 503, 504),
-            retry_on_timeout=True,
-            timeout=30,
-            pool_maxsize=self._os_settings.pool_size,
-            max_retries=3,
-        )
+        if self._os_settings:
+            self._client = AsyncOpenSearch(
+                hosts=[{"host": self._os_settings.host, "port": self._os_settings.port}],
+                scheme=self._os_settings.scheme,
+                http_auth=(self._os_settings.user, self._os_settings.password),
+                use_ssl=True,
+                verify_certs=False,
+                ssl_show_warn=False,
+                retry_on_status=(500, 502, 503, 504),
+                retry_on_timeout=True,
+                timeout=30,
+                pool_maxsize=self._os_settings.pool_size,
+                max_retries=3,
+            )
+        else:
+            raise Exception("OpenSearch settings are not specified in environment variables")
 
     @property
     def client(self) -> AsyncOpenSearch:
@@ -77,6 +80,8 @@ class AsyncOpenSearchClient:
             is_connected = await self._client.ping()
             if not is_connected:
                 raise Exception("Failed to connect to OpenSearch")
+            if not await self._client.indices.exists(index=self.similarity_prompt_index):
+                raise Exception(f"Index `{self.similarity_prompt_index}` does not exist.")
         except Exception as e:
             error_msg = f"Failed to connect to OpenSearch. Error: {str(e)}"
             pipeline_logger.exception(f"[{self._os_settings.host}] {error_msg}")
