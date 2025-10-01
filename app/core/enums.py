@@ -14,6 +14,7 @@ class ActionStatus(str, Enum):
     ALLOW = "allow"
     BLOCK = "block"
     NOTIFY = "notify"
+    ERROR = "error"
 
 
 class PipelineLabel(str, Enum):

@@ -390,7 +390,7 @@ Get a list of all available flows and their pipelines.
 
 ### 5. LLM Pipeline (`openai`)
 - **Purpose**: AI-powered analysis using OpenAI GPT models
-- **Configuration**: Requires `OPENAI_API_KEY` and `OPENAI_MODEL` (by default gpt-4)
+- **Configuration**: Requires `OPENAI_API_KEY` and `OPENAI_MODEL` (default is gpt-4). The `OPENAI_BASE_URL` environment variable is optional; by default, it is set to https://api.openai.com/v1
 - **Features**: JSON response format, configurable models, intelligent decision-making
 - **Response Format**: Returns structured JSON with status (block/notify/allow) and reasoning
 - **Best for**: Complex reasoning and context-aware analysis

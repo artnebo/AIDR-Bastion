@@ -61,8 +61,13 @@ Return only a JSON object in the following format:
             model = "gpt-4"
         self.model = model
         if settings.OPENAI_API_KEY:
+            openai_settings = {
+                "api_key": settings.OPENAI_API_KEY,
+            }
+            if settings.OPENAI_BASE_URL:
+                openai_settings["base_url"] = settings.OPENAI_BASE_URL
+            self.client = AsyncOpenAI(**openai_settings)
             self.enabled = True
-            self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY, base_url=settings.OPENAI_BASE_URL)
             pipeline_logger.info(f"[{self}] loaded successfully. Model: {self.model}")
         else:
             pipeline_logger.warning(f"[{self}] failed to load model. Model: {self.model}")
@@ -113,7 +118,11 @@ Return only a JSON object in the following format:
             return self._process_response(analysis, prompt)
         except Exception as err:
             pipeline_logger.error(f"Error analyzing prompt, error={str(err)}")
-            return
+            error_data = {
+                "status": ActionStatus.ERROR,
+                "reason": str(err),
+            }
+            return self._process_response(error_data, prompt)
 
     def _prepare_messages(self, text: str) -> list[dict]:
         """
