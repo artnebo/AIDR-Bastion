@@ -57,18 +57,29 @@ Return only a JSON object in the following format:
         """
         self.client = None
         model = settings.OPENAI_MODEL
-        if not model:
-            model = "gpt-4"
         self.model = model
-        if settings.OPENAI_API_KEY:
-            self.enabled = True
-            self.client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-            pipeline_logger.info(f"[{self}] loaded successfully. Model: {self.model}")
-        else:
-            pipeline_logger.warning(f"[{self}] failed to load model. Model: {self.model}")
+        self.__load_client()
 
     def __str__(self) -> str:
         return "LLM Pipeline"
+
+    def __load_client(self) -> None:
+        """
+        Loads the OpenAI client.
+        """
+        if not (settings.OPENAI_API_KEY or settings.OPENAI_BASE_URL):
+            pipeline_logger.warning(f"[{self}] failed to load client. Model: {self.model}. API key or base URL is not set.")
+        else:
+            openai_settings = {
+                "api_key": settings.OPENAI_API_KEY,
+                "base_url": settings.OPENAI_BASE_URL,
+            }
+            try:
+                self.client = AsyncOpenAI(**openai_settings)
+                self.enabled = True
+                pipeline_logger.info(f"[{self}] loaded successfully. Model: {self.model}")
+            except Exception as err:
+                pipeline_logger.error(f"[{self}] failed to load client. Model: {self.model}. Error: {str(err)}")
 
     def _load_response(self, response: str) -> str:
         """
@@ -113,7 +124,11 @@ Return only a JSON object in the following format:
             return self._process_response(analysis, prompt)
         except Exception as err:
             pipeline_logger.error(f"Error analyzing prompt, error={str(err)}")
-            return
+            error_data = {
+                "status": ActionStatus.ERROR,
+                "reason": str(err),
+            }
+            return self._process_response(error_data, prompt)
 
     def _prepare_messages(self, text: str) -> list[dict]:
         """
