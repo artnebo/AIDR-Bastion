@@ -6,7 +6,7 @@ const config = {
   tagline: 'A comprehensive GenAI protection system designed to safeguard against malicious prompts, injection attacks, and harmful content',
   favicon: 'img/favicon.ico',
 
-  url: 'https://YOUR_USERNAME.github.io',
+  url: 'https://artnebo.github.io',
   baseUrl: '/AIDR-Bastion/',
 
   organizationName: '0xAIDR',
