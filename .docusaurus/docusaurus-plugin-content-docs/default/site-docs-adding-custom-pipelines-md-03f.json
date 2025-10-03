@@ -1,0 +1,24 @@
+{
+  "id": "adding-custom-pipelines",
+  "title": "Adding Custom Pipelines",
+  "description": "Step 1: Create Pipeline Class",
+  "source": "@site/docs/adding-custom-pipelines.md",
+  "sourceDirName": ".",
+  "slug": "/adding-custom-pipelines",
+  "permalink": "/AIDR-Bastion/docs/adding-custom-pipelines",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/adding-custom-pipelines.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Rule Management and Customization",
+    "permalink": "/AIDR-Bastion/docs/rule-management"
+  },
+  "next": {
+    "title": "Development",
+    "permalink": "/AIDR-Bastion/docs/development"
+  }
+}

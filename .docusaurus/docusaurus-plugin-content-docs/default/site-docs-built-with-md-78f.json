@@ -1,0 +1,24 @@
+{
+  "id": "built-with",
+  "title": "Built With",
+  "description": "This project is built using the following powerful open-source libraries and frameworks:",
+  "source": "@site/docs/built-with.md",
+  "sourceDirName": ".",
+  "slug": "/built-with",
+  "permalink": "/AIDR-Bastion/docs/built-with",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/built-with.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "License",
+    "permalink": "/AIDR-Bastion/docs/license"
+  },
+  "next": {
+    "title": "TO-DO List",
+    "permalink": "/AIDR-Bastion/docs/to-do-list"
+  }
+}

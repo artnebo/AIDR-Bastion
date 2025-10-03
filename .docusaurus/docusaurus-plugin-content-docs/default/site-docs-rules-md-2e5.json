@@ -1,0 +1,18 @@
+{
+  "id": "rules",
+  "title": "Rules Management",
+  "description": "Rule Types",
+  "source": "@site/docs/rules.md",
+  "sourceDirName": ".",
+  "slug": "/rules",
+  "permalink": "/AIDR-Bastion/docs/rules",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/rules.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "development",
+  "title": "Development",
+  "description": "Setting up OpenSearch",
+  "source": "@site/docs/development.md",
+  "sourceDirName": ".",
+  "slug": "/development",
+  "permalink": "/AIDR-Bastion/docs/development",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/development.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Adding Custom Pipelines",
+    "permalink": "/AIDR-Bastion/docs/adding-custom-pipelines"
+  },
+  "next": {
+    "title": "License",
+    "permalink": "/AIDR-Bastion/docs/license"
+  }
+}

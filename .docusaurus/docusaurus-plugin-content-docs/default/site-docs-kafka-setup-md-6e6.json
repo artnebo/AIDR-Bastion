@@ -1,0 +1,18 @@
+{
+  "id": "kafka-setup",
+  "title": "Kafka Setup",
+  "description": "AIDR Bastion supports Kafka integration for logging BLOCK and NOTIFY events, enabling scalable event streaming and real-time monitoring.",
+  "source": "@site/docs/kafka-setup.md",
+  "sourceDirName": ".",
+  "slug": "/kafka-setup",
+  "permalink": "/AIDR-Bastion/docs/kafka-setup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/kafka-setup.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  }
+}

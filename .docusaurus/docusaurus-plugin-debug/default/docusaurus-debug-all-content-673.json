@@ -1,0 +1,412 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/AIDR-Bastion/docs",
+          "tagsPath": "/AIDR-Bastion/docs/tags",
+          "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs",
+          "editUrlLocalized": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/sidebars.js",
+          "contentPath": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/docs",
+          "contentPathLocalized": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "id": "adding-custom-pipelines",
+              "title": "Adding Custom Pipelines",
+              "description": "Step 1: Create Pipeline Class",
+              "source": "@site/docs/adding-custom-pipelines.md",
+              "sourceDirName": ".",
+              "slug": "/adding-custom-pipelines",
+              "permalink": "/AIDR-Bastion/docs/adding-custom-pipelines",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/adding-custom-pipelines.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Rule Management and Customization",
+                "permalink": "/AIDR-Bastion/docs/rule-management"
+              },
+              "next": {
+                "title": "Development",
+                "permalink": "/AIDR-Bastion/docs/development"
+              }
+            },
+            {
+              "id": "api-reference",
+              "title": "API Reference",
+              "description": "POST /api/v1/run_pipeline",
+              "source": "@site/docs/api-reference.md",
+              "sourceDirName": ".",
+              "slug": "/api-reference",
+              "permalink": "/AIDR-Bastion/docs/api-reference",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/api-reference.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Usage",
+                "permalink": "/AIDR-Bastion/docs/usage"
+              },
+              "next": {
+                "title": "Pipelines",
+                "permalink": "/AIDR-Bastion/docs/pipelines"
+              }
+            },
+            {
+              "id": "built-with",
+              "title": "Built With",
+              "description": "This project is built using the following powerful open-source libraries and frameworks:",
+              "source": "@site/docs/built-with.md",
+              "sourceDirName": ".",
+              "slug": "/built-with",
+              "permalink": "/AIDR-Bastion/docs/built-with",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/built-with.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "License",
+                "permalink": "/AIDR-Bastion/docs/license"
+              },
+              "next": {
+                "title": "TO-DO List",
+                "permalink": "/AIDR-Bastion/docs/to-do-list"
+              }
+            },
+            {
+              "id": "configuration",
+              "title": "Configuration",
+              "description": "Environment Variables (.env)",
+              "source": "@site/docs/configuration.md",
+              "sourceDirName": ".",
+              "slug": "/configuration",
+              "permalink": "/AIDR-Bastion/docs/configuration",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/configuration.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Installation",
+                "permalink": "/AIDR-Bastion/docs/installation"
+              },
+              "next": {
+                "title": "Usage",
+                "permalink": "/AIDR-Bastion/docs/usage"
+              }
+            },
+            {
+              "id": "development",
+              "title": "Development",
+              "description": "Setting up OpenSearch",
+              "source": "@site/docs/development.md",
+              "sourceDirName": ".",
+              "slug": "/development",
+              "permalink": "/AIDR-Bastion/docs/development",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/development.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Adding Custom Pipelines",
+                "permalink": "/AIDR-Bastion/docs/adding-custom-pipelines"
+              },
+              "next": {
+                "title": "License",
+                "permalink": "/AIDR-Bastion/docs/license"
+              }
+            },
+            {
+              "id": "installation",
+              "title": "Installation",
+              "description": "Prerequisites",
+              "source": "@site/docs/installation.md",
+              "sourceDirName": ".",
+              "slug": "/installation",
+              "permalink": "/AIDR-Bastion/docs/installation",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/installation.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/AIDR-Bastion/docs/intro"
+              },
+              "next": {
+                "title": "Configuration",
+                "permalink": "/AIDR-Bastion/docs/configuration"
+              }
+            },
+            {
+              "id": "intro",
+              "title": "Introduction",
+              "description": "AIDR Bastion is a comprehensive GenAI protection system designed to safeguard against malicious prompts, injection attacks, and harmful content. The system incorporates multiple detection engines that operate sequentially to analyze and classify user inputs before reaching GenAI applications.",
+              "source": "@site/docs/intro.md",
+              "sourceDirName": ".",
+              "slug": "/intro",
+              "permalink": "/AIDR-Bastion/docs/intro",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/intro.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "next": {
+                "title": "Installation",
+                "permalink": "/AIDR-Bastion/docs/installation"
+              }
+            },
+            {
+              "id": "license",
+              "title": "License",
+              "description": "This project is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0) - see the LICENSE file for details.",
+              "source": "@site/docs/license.md",
+              "sourceDirName": ".",
+              "slug": "/license",
+              "permalink": "/AIDR-Bastion/docs/license",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/license.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Development",
+                "permalink": "/AIDR-Bastion/docs/development"
+              },
+              "next": {
+                "title": "Built With",
+                "permalink": "/AIDR-Bastion/docs/built-with"
+              }
+            },
+            {
+              "id": "pipelines",
+              "title": "Pipelines",
+              "description": "1. Regex Pipeline (regex)",
+              "source": "@site/docs/pipelines.md",
+              "sourceDirName": ".",
+              "slug": "/pipelines",
+              "permalink": "/AIDR-Bastion/docs/pipelines",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/pipelines.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "API Reference",
+                "permalink": "/AIDR-Bastion/docs/api-reference"
+              },
+              "next": {
+                "title": "Rule Management and Customization",
+                "permalink": "/AIDR-Bastion/docs/rule-management"
+              }
+            },
+            {
+              "id": "README",
+              "title": "AIDR Bastion",
+              "description": "Version",
+              "source": "@site/docs/README.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/AIDR-Bastion/docs/",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/README.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {}
+            },
+            {
+              "id": "rule-management",
+              "title": "Rule Management and Customization",
+              "description": "YAML Rules for Regex Pipeline",
+              "source": "@site/docs/rule-management.md",
+              "sourceDirName": ".",
+              "slug": "/rule-management",
+              "permalink": "/AIDR-Bastion/docs/rule-management",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/rule-management.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Pipelines",
+                "permalink": "/AIDR-Bastion/docs/pipelines"
+              },
+              "next": {
+                "title": "Adding Custom Pipelines",
+                "permalink": "/AIDR-Bastion/docs/adding-custom-pipelines"
+              }
+            },
+            {
+              "id": "to-do-list",
+              "title": "TO-DO List",
+              "description": "- Integrate API with SOC Prime for automatic rule synchronization and uploads",
+              "source": "@site/docs/to-do-list.md",
+              "sourceDirName": ".",
+              "slug": "/to-do-list",
+              "permalink": "/AIDR-Bastion/docs/to-do-list",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/to-do-list.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Built With",
+                "permalink": "/AIDR-Bastion/docs/built-with"
+              }
+            },
+            {
+              "id": "usage",
+              "title": "Usage",
+              "description": "Basic API Usage",
+              "source": "@site/docs/usage.md",
+              "sourceDirName": ".",
+              "slug": "/usage",
+              "permalink": "/AIDR-Bastion/docs/usage",
+              "draft": false,
+              "unlisted": false,
+              "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/usage.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Configuration",
+                "permalink": "/AIDR-Bastion/docs/configuration"
+              },
+              "next": {
+                "title": "API Reference",
+                "permalink": "/AIDR-Bastion/docs/api-reference"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "tutorialSidebar": [
+              {
+                "type": "doc",
+                "id": "intro",
+                "label": "Introduction",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "installation",
+                "label": "Installation",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "configuration",
+                "label": "Configuration",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "usage",
+                "label": "Usage",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "api-reference",
+                "label": "API Reference",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "pipelines",
+                "label": "Pipelines",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "rule-management",
+                "label": "Rule Management and Customization",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "adding-custom-pipelines",
+                "label": "Adding Custom Pipelines",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "development",
+                "label": "Development",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "license",
+                "label": "License",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "built-with",
+                "label": "Built With",
+                "translatable": true
+              },
+              {
+                "type": "doc",
+                "id": "to-do-list",
+                "label": "TO-DO List",
+                "translatable": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/AIDR-Bastion/",
+        "source": "@site/src/pages/index.tsx"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

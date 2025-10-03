@@ -1,0 +1,24 @@
+{
+  "id": "custom-pipelines",
+  "title": "Adding Custom Pipelines",
+  "description": "AIDR Bastion's modular architecture allows you to create custom detection pipelines tailored to your specific needs.",
+  "source": "@site/docs/custom-pipelines.md",
+  "sourceDirName": ".",
+  "slug": "/custom-pipelines",
+  "permalink": "/AIDR-Bastion/docs/custom-pipelines",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/custom-pipelines.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Rule Management and Customization",
+    "permalink": "/AIDR-Bastion/docs/rule-management"
+  },
+  "next": {
+    "title": "Development",
+    "permalink": "/AIDR-Bastion/docs/development"
+  }
+}
