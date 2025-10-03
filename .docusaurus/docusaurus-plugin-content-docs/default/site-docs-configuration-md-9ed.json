@@ -1,0 +1,24 @@
+{
+  "id": "configuration",
+  "title": "Configuration",
+  "description": "Environment Variables (.env)",
+  "source": "@site/docs/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/AIDR-Bastion/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/AIDR-Bastion/docs/installation"
+  },
+  "next": {
+    "title": "Usage",
+    "permalink": "/AIDR-Bastion/docs/usage"
+  }
+}

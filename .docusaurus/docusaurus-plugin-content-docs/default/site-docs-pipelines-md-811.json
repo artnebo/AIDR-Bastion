@@ -1,0 +1,24 @@
+{
+  "id": "pipelines",
+  "title": "Pipelines",
+  "description": "1. Regex Pipeline (regex)",
+  "source": "@site/docs/pipelines.md",
+  "sourceDirName": ".",
+  "slug": "/pipelines",
+  "permalink": "/AIDR-Bastion/docs/pipelines",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/pipelines.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "API Reference",
+    "permalink": "/AIDR-Bastion/docs/api-reference"
+  },
+  "next": {
+    "title": "Rule Management and Customization",
+    "permalink": "/AIDR-Bastion/docs/rule-management"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "rule-management",
+  "title": "Rule Management and Customization",
+  "description": "YAML Rules for Regex Pipeline",
+  "source": "@site/docs/rule-management.md",
+  "sourceDirName": ".",
+  "slug": "/rule-management",
+  "permalink": "/AIDR-Bastion/docs/rule-management",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/rule-management.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Pipelines",
+    "permalink": "/AIDR-Bastion/docs/pipelines"
+  },
+  "next": {
+    "title": "Adding Custom Pipelines",
+    "permalink": "/AIDR-Bastion/docs/adding-custom-pipelines"
+  }
+}

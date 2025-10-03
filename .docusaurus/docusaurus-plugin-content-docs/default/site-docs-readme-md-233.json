@@ -1,0 +1,15 @@
+{
+  "id": "README",
+  "title": "AIDR Bastion",
+  "description": "Version",
+  "source": "@site/docs/README.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/AIDR-Bastion/docs/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/README.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

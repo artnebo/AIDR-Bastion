@@ -1,0 +1,18 @@
+{
+  "id": "development-setup",
+  "title": "Development Setup",
+  "description": "Setting up OpenSearch",
+  "source": "@site/docs/development-setup.md",
+  "sourceDirName": ".",
+  "slug": "/development-setup",
+  "permalink": "/AIDR-Bastion/docs/development-setup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/docs/development-setup.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  }
+}

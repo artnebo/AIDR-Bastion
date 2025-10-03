@@ -1,0 +1,92 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/AIDR-Bastion/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/AIDR-Bastion/docs",
+          "mainDocId": "README",
+          "docs": [
+            {
+              "id": "adding-custom-pipelines",
+              "path": "/AIDR-Bastion/docs/adding-custom-pipelines",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "api-reference",
+              "path": "/AIDR-Bastion/docs/api-reference",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "built-with",
+              "path": "/AIDR-Bastion/docs/built-with",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "configuration",
+              "path": "/AIDR-Bastion/docs/configuration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "development",
+              "path": "/AIDR-Bastion/docs/development",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation",
+              "path": "/AIDR-Bastion/docs/installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/AIDR-Bastion/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "license",
+              "path": "/AIDR-Bastion/docs/license",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pipelines",
+              "path": "/AIDR-Bastion/docs/pipelines",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "README",
+              "path": "/AIDR-Bastion/docs/"
+            },
+            {
+              "id": "rule-management",
+              "path": "/AIDR-Bastion/docs/rule-management",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "to-do-list",
+              "path": "/AIDR-Bastion/docs/to-do-list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "usage",
+              "path": "/AIDR-Bastion/docs/usage",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/AIDR-Bastion/docs/intro",
+                "label": "Introduction"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
