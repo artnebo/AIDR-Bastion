@@ -1,0 +1,19 @@
+name: AWS Access Key Detection (LLM PII Detection)
+details: Detects AWS Access Key ID starting with "AKIA", "ASIA", etc.
+author: SOC Prime Team
+severity: critical
+date: 2025-05-28
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+    - AKIA[0-9A-Z]{16}
+    - ASIA[0-9A-Z]{16}
+references:
+  - https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html
+license: DRL 1.1
+uuid: 04cce535-684e-45a2-b19c-4518a4b93d70
+response: notify

@@ -1,0 +1,19 @@
+name: CVV Code Detection
+details: Detects Card Verification Value (CVV) or Card Verification Code (CVC) present in logs.
+author: SOC Prime Team
+severity: critical
+date: 2025-05-28
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+    - (?i)\b(?:cvv|cvc)[\s:]*\d{3,4}\b
+    - (?i)\b(?:pin|personal_code|puk)[\s:]*\d{3,4}\b
+references:
+  - https://en.wikipedia.org/wiki/Card_security_code
+license: DRL 1.1
+uuid: 95041405-ca07-44a9-ab9e-bdef3c1f0027
+response: notify  

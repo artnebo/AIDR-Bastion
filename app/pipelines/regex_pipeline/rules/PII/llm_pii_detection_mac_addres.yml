@@ -1,0 +1,18 @@
+name: MAC Address Detection (LLM PII Detection)
+details: Detects MAC addresses which can identify physical hardware devices.
+author: SOC Prime Team
+severity: medium
+date: 2025-05-28
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+    - \b(?:[0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}\b
+references:
+  - https://en.wikipedia.org/wiki/MAC_address
+license: DRL 1.1
+uuid: 0a9a71c9-7914-454a-b5c1-c2ce82188c93
+response: notify

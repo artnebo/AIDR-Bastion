@@ -1,0 +1,32 @@
+[
+    {
+        "pipeline_flow": "full_scan",
+        "pipelines": [
+            "similarity",
+            "regex",
+            "openai",
+            "ml",
+            "code_analysis"
+        ]
+    },
+    {
+        "pipeline_flow": "code_audit",
+        "pipelines": [
+            "code_analysis"
+        ]
+    },
+    {
+        "pipeline_flow": "model_audit",
+        "pipelines": [
+            "ml",
+            "openai"
+        ]
+    },
+    {
+        "pipeline_flow": "base_audit",
+        "pipelines": [
+            "regex",
+            "similarity"
+        ]
+    }
+]

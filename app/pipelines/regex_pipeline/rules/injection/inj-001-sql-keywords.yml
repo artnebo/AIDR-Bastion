@@ -1,0 +1,19 @@
+name: 'INJ-001: SQL Keywords'
+details: Detects common SQL manipulation keywords. Designed to be a high-confidence signal. https://tdm.socprime.com/
+author: SOC Prime Team
+severity: critical
+date: 2025-08-08
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+    - '(?i)\b(?:SELECT\s+(?:(?!\bFROM\b)[^,;]+,)+(?:(?!\bFROM\b)[^,;]+)\s+FROM|INSERT\s+INTO|UPDATE\s+[\w\.]+\s+SET|DELETE\s+FROM|DROP\s+(?:TABLE|DATABASE)|ALTER\s+TABLE|CREATE\s+TABLE|TRUNCATE\s+TABLE)\b'
+references:
+  - https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+  - https://owasp.org/Top10/A03_2021-Injection/
+license: DRL 1.1
+uuid: f1a2b3c4-d5e6-4f7a-8b8c-9d0e1f2a3b4c
+response: block
