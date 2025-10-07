@@ -1,0 +1,18 @@
+name: 'OBF-001: Character Obfuscation'
+details: Detects words obfuscated with non-alphanumeric characters or leetspeak. https://tdm.socprime.com/
+author: SOC Prime Team
+severity: medium
+date: 2025-08-08
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+  - 'i[\s\W_]*g[\s\W_]*n[\s\W_]*o[\s\W_]*r[\s\W_]*e|\b[dD][i1l]s[ar]eg[ar]+d\b|\b[fF]0[rg]et\b'
+references:
+- https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+license: DRL 1.1
+uuid: c9d0e1f2-a3b4-4c5d-8e6f-7a8b9c0d1e2f
+response: notify

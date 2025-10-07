@@ -1,0 +1,19 @@
+name: 'DOS-001: Regex DoS (ReDoS)'
+details: Detects complex regular expressions with nested quantifiers that can cause catastrophic backtracking. https://tdm.socprime.com/
+author: SOC Prime Team
+severity: high
+date: 2025-08-08
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+  - '(\(.*\)\*)+|(\([a-z]+\+\)+)+'
+references:
+- https://genai.owasp.org/llmrisk2023-24/llm04-model-denial-of-service/
+- https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS
+license: DRL 1.1
+uuid: e5f6a7b8-c9d0-4e1f-8a2b-3c4d5e6f7a8b
+response: block

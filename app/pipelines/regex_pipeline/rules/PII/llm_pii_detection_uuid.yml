@@ -1,0 +1,18 @@
+name: UUID Detection (LLM PII Detection)
+details: Detects Universally Unique Identifiers (UUIDs) commonly used as identifiers in logs.
+author: SOC Prime Team
+severity: medium
+date: 2025-05-28
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+    - \b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89ab][0-9a-fA-F]{3}-[0-9a-fA-F]{12}\b
+references:
+  - https://en.wikipedia.org/wiki/UUID
+license: DRL 1.1
+uuid: 95041405-ca07-44a9-ab9e-bdef3c1f0027
+response: notify

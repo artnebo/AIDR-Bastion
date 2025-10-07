@@ -1,0 +1,19 @@
+name: API Key Exposure (LLM PII Detection)
+details: Detects possible API keys in URLs or strings with “api_key” or similar.
+author: SOC Prime Team
+severity: high
+date: 2025-05-28
+logsource:
+  product: llm
+  service: firewall
+  module: regex
+detection:
+  language: llm-regex-pattern
+  pattern:
+    - (?i)api[_-]?key[\s:=]{1,4}[A-Za-z0-9_\-]{16,}
+    - AIza[0-9A-Za-z-_]{35}
+references:
+  - https://owasp.org/www-project-api-security/
+license: DRL 1.1
+uuid: 44c77cda-9e21-4dee-9af3-0a8931dce487
+response: notify
