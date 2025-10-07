@@ -27,7 +27,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/',
+          editUrl: 'https://github.com/artnebo/AIDR-Bastion/tree/main/docs-site/',
           routeBasePath: 'docs',
         },
         blog: false,
@@ -68,7 +68,7 @@ const config = {
             to: '/docs/intro',
           },
           {
-            href: 'https://github.com/0xAIDR/AIDR-Bastion',
+            href: 'https://github.com/artnebo/AIDR-Bastion',
             label: 'GitHub',
             position: 'right',
           },
@@ -96,26 +96,6 @@ const config = {
                 label: 'Usage',
                 to: '/docs/usage',
               },
-              {
-                label: 'API Reference',
-                to: '/docs/api-reference',
-              },
-              {
-                label: 'Pipelines',
-                to: '/docs/pipelines',
-              },
-              {
-                label: 'Rule Management',
-                to: '/docs/rule-management',
-              },
-              {
-                label: 'Adding Custom Pipelines',
-                to: '/docs/adding-custom-pipelines',
-              },
-              {
-                label: 'Development',
-                to: '/docs/development',
-              },
             ],
           },
           {
@@ -123,20 +103,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/0xAIDR/AIDR-Bastion',
-              },
-              {
-                label: 'GitHub Issues',
-                href: 'https://github.com/0xAIDR/AIDR-Bastion/issues',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'License',
-                href: 'https://www.gnu.org/licenses/lgpl-3.0.html',
+                href: 'https://github.com/artnebo/AIDR-Bastion',
               },
             ],
           },
@@ -158,4 +125,3 @@ const config = {
 };
 
 module.exports = config;
-

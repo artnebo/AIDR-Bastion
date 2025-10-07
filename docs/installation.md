@@ -10,7 +10,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/0xAIDR/AIDR-Bastion.git
+   git clone https://github.com/artnebo/AIDR-Bastion.git
    cd AIDR-Bastion
    ```
 
@@ -36,4 +36,4 @@
    python server.py
    ```
 
-By default, the API will be available at `http://localhost:8000`. You can customize the host and port using the HOST and PORT environment variables.
+By default, the API will be available at `http://localhost:8000`.

@@ -117,7 +117,7 @@
     "configuration": {
       "id": "configuration",
       "title": "Configuration",
-      "description": "Environment Variables (.env)",
+      "description": "Environment Variables",
       "sidebar": "tutorialSidebar"
     },
     "development": {
@@ -135,7 +135,7 @@
     "intro": {
       "id": "intro",
       "title": "Introduction",
-      "description": "AIDR Bastion is a comprehensive GenAI protection system designed to safeguard against malicious prompts, injection attacks, and harmful content. The system incorporates multiple detection engines that operate sequentially to analyze and classify user inputs before reaching GenAI applications.",
+      "description": "Welcome to AIDR Bastion documentation!",
       "sidebar": "tutorialSidebar"
     },
     "license": {
