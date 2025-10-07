@@ -1,74 +1,117 @@
 {
-  "/AIDR-Bastion/docs-6ce": {
-    "__comp": "5e95c892",
+  "/AIDR-Bastion/__docusaurus/debug-293": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "0e02524e"
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    }
+  },
+  "/AIDR-Bastion/__docusaurus/debug/config-94b": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    }
+  },
+  "/AIDR-Bastion/__docusaurus/debug/content-e88": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    },
+    "allContent": "allContent---aidr-bastion-docusaurus-debug-content-246-810"
+  },
+  "/AIDR-Bastion/__docusaurus/debug/globalData-a97": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    }
+  },
+  "/AIDR-Bastion/__docusaurus/debug/metadata-32a": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    }
+  },
+  "/AIDR-Bastion/__docusaurus/debug/registry-211": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    }
+  },
+  "/AIDR-Bastion/__docusaurus/debug/routes-6ed": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docusaurus-debug-17-a-c30"
+    }
+  },
+  "/AIDR-Bastion/docs-6b0": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---aidr-bastion-docse-91-397"
     }
   },
   "/AIDR-Bastion/docs-555": {
-    "__comp": "a7bd4aaa",
-    "version": "935f2afb"
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "version": "version---aidr-bastion-docs-935-60e"
   },
   "/AIDR-Bastion/docs-80f": {
-    "__comp": "a94703ab"
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/AIDR-Bastion/docs/-4d2": {
-    "__comp": "17896441",
-    "content": "23374ca6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-233-9a0"
   },
   "/AIDR-Bastion/docs/adding-custom-pipelines-ba8": {
-    "__comp": "17896441",
-    "content": "03f0ce96"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-adding-custom-pipelines-03-f-4b7"
   },
   "/AIDR-Bastion/docs/api-reference-387": {
-    "__comp": "17896441",
-    "content": "964ae018"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-api-reference-964-752"
   },
   "/AIDR-Bastion/docs/built-with-a3d": {
-    "__comp": "17896441",
-    "content": "78f86360"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-built-with-78-f-35c"
   },
   "/AIDR-Bastion/docs/configuration-8ba": {
-    "__comp": "17896441",
-    "content": "9ed00105"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-configuration-9-ed-68a"
   },
   "/AIDR-Bastion/docs/development-cf0": {
-    "__comp": "17896441",
-    "content": "8f030830"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-development-8-f-0-5f6"
   },
   "/AIDR-Bastion/docs/installation-aed": {
-    "__comp": "17896441",
-    "content": "3b8c55ea"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-installation-3-b-8-b41"
   },
   "/AIDR-Bastion/docs/intro-7f4": {
-    "__comp": "17896441",
-    "content": "0e384e19"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-intro-0-e-3-0f8"
   },
   "/AIDR-Bastion/docs/license-a96": {
-    "__comp": "17896441",
-    "content": "ac5280f2"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-licenseac-5-553"
   },
   "/AIDR-Bastion/docs/pipelines-b03": {
-    "__comp": "17896441",
-    "content": "811235cb"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-pipelines-811-1ae"
   },
   "/AIDR-Bastion/docs/rule-management-b61": {
-    "__comp": "17896441",
-    "content": "edf16cf2"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-rule-managementedf-339"
   },
   "/AIDR-Bastion/docs/to-do-list-6af": {
-    "__comp": "17896441",
-    "content": "9f4416df"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-to-do-list-9-f-4-e9a"
   },
   "/AIDR-Bastion/docs/usage-5e0": {
-    "__comp": "17896441",
-    "content": "6476eba6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---aidr-bastion-docs-usage-647-2b3"
   },
-  "/AIDR-Bastion/-171": {
-    "__comp": "1df93b7f",
+  "/AIDR-Bastion/-bb5": {
+    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
     "__context": {
-      "plugin": "bf330fdd"
+      "plugin": "plugin---aidr-bastion-6-c-4-ac7"
     },
-    "config": "5e9f5e1a"
+    "config": "config---aidr-bastion-5-e-9-a84"
   }
 }

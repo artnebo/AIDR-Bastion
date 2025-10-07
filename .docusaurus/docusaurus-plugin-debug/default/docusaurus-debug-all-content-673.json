@@ -15,9 +15,9 @@
           "editUrlLocalized": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/sidebars.js",
-          "contentPath": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/docs",
-          "contentPathLocalized": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/andriibo/Desktop/github/AIDR-Bastion/docs-site/sidebars.js",
+          "contentPath": "/Users/andriibo/Desktop/github/AIDR-Bastion/docs-site/docs",
+          "contentPathLocalized": "/Users/andriibo/Desktop/github/AIDR-Bastion/docs-site/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "id": "adding-custom-pipelines",

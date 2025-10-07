@@ -3,8 +3,43 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/AIDR-Bastion/__docusaurus/debug',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug', '293'),
+    exact: true
+  },
+  {
+    path: '/AIDR-Bastion/__docusaurus/debug/config',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug/config', '94b'),
+    exact: true
+  },
+  {
+    path: '/AIDR-Bastion/__docusaurus/debug/content',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug/content', 'e88'),
+    exact: true
+  },
+  {
+    path: '/AIDR-Bastion/__docusaurus/debug/globalData',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug/globalData', 'a97'),
+    exact: true
+  },
+  {
+    path: '/AIDR-Bastion/__docusaurus/debug/metadata',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug/metadata', '32a'),
+    exact: true
+  },
+  {
+    path: '/AIDR-Bastion/__docusaurus/debug/registry',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug/registry', '211'),
+    exact: true
+  },
+  {
+    path: '/AIDR-Bastion/__docusaurus/debug/routes',
+    component: ComponentCreator('/AIDR-Bastion/__docusaurus/debug/routes', '6ed'),
+    exact: true
+  },
+  {
     path: '/AIDR-Bastion/docs',
-    component: ComponentCreator('/AIDR-Bastion/docs', '6ce'),
+    component: ComponentCreator('/AIDR-Bastion/docs', '6b0'),
     routes: [
       {
         path: '/AIDR-Bastion/docs',
@@ -99,7 +134,7 @@ export default [
   },
   {
     path: '/AIDR-Bastion/',
-    component: ComponentCreator('/AIDR-Bastion/', '171'),
+    component: ComponentCreator('/AIDR-Bastion/', 'bb5'),
     exact: true
   },
   {

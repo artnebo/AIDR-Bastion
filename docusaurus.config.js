@@ -9,7 +9,7 @@ const config = {
   url: 'https://artnebo.github.io',
   baseUrl: '/AIDR-Bastion/',
 
-  organizationName: '0xAIDR',
+  organizationName: 'artnebo',
   projectName: 'AIDR-Bastion',
 
   onBrokenLinks: 'warn',
@@ -28,6 +28,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/',
+          routeBasePath: 'docs',
         },
         blog: false,
         theme: {
@@ -54,10 +55,17 @@ const config = {
         },
         items: [
           {
+            to: '/',
+            label: 'Home',
+            position: 'left',
+            activeBaseRegex: '^/$',
+          },
+          {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentation',
+            to: '/docs/intro',
           },
           {
             href: 'https://github.com/0xAIDR/AIDR-Bastion',

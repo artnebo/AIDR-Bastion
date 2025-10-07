@@ -1,102 +1,86 @@
-# AIDR Bastion Documentation Website
+# AIDR-Bastion Documentation
 
-Official documentation website for AIDR Bastion - A comprehensive GenAI protection system.
+Це документація для проекту AIDR-Bastion, побудована з використанням Docusaurus.
 
-## 🚀 Quick Start
+## Локальна розробка
 
-### Installation
+### Передумови
+- Node.js 18+ 
+- npm
 
+### Встановлення залежностей
 ```bash
 npm install
 ```
 
-### Local Development
-
+### Запуск локального сервера розробки
 ```bash
 npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Документація буде доступна за адресою `http://localhost:3000`
 
-### Build
-
+### Збірка документації
 ```bash
 npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+### Попередній перегляд збірки
+```bash
+npm run serve
+```
 
-### Deployment
+## Деплой на GitHub Pages
+
+### Автоматичний деплой
+Документація автоматично деплоїться на GitHub Pages при кожному push в гілку `main` або `master`.
+
+### Ручний деплой
+Для ручного деплою використовуйте скрипт:
 
 ```bash
+./deploy.sh
+```
+
+Або виконайте команди вручну:
+
+```bash
+# Встановлення залежностей
+npm ci
+
+# Очищення попередньої збірки
+npm run clear
+
+# Збірка документації
+npm run build
+
+# Деплой на GitHub Pages
 npm run deploy
 ```
 
-## 📁 Project Structure
+## Структура проекту
 
-```
-AIDR-Bastion-site/
-├── docs/                      # Markdown documentation
-│   ├── intro.md
-│   ├── installation.md
-│   ├── pipelines/
-│   └── rules/
-├── src/
-│   ├── pages/                 # React pages
-│   │   ├── index.tsx         # Homepage
-│   │   └── index.module.css
-│   └── css/                   # Global styles
-│       └── custom.css
-├── static/                    # Static assets
-│   └── img/
-├── docusaurus.config.js      # Site configuration
-├── sidebars.js              # Sidebar navigation
-└── package.json
-```
+- `docs/` - Markdown файли документації
+- `src/` - React компоненти та стилі
+- `static/` - Статичні ресурси (зображення, іконки)
+- `docusaurus.config.js` - Конфігурація Docusaurus
+- `sidebars.js` - Конфігурація бічної панелі
 
-## 🎨 Design Theme
+## Налаштування
 
-### Cyberpunk Neon Style
+Основні налаштування знаходяться в `docusaurus.config.js`:
 
-This site features a custom cyberpunk-inspired design with:
-- 🏰 **3D Logo**: Custom isometric fortress with neon AIDR branding
-- 💚 **Neon Green Effects**: Glowing lines, animations, and accents
-- 🌊 **Abstract Animations**: Flowing neon lines across backgrounds
-- 🎯 **Modern UI**: Cards, badges, and buttons with glow effects
+- `url` - URL сайту документації
+- `baseUrl` - Базовий URL для GitHub Pages
+- `organizationName` - Назва організації GitHub
+- `projectName` - Назва проекту GitHub
 
-### Color Scheme
+## Додавання нової документації
 
-Edit `src/css/custom.css` for color customization:
+1. Створіть новий Markdown файл в папці `docs/`
+2. Додайте посилання на файл в `sidebars.js`
+3. Зробіть commit та push змін
 
-```css
-:root {
-  --ifm-color-primary: #00ff88;           /* Neon Green */
-  --ifm-background-color: #292C3D;        /* Dark Blue-Gray */
-  --ifm-background-surface-color: #2f3349;
-  --ifm-code-background: #242838;
-}
-```
+## Підтримка
 
-### Key Files
-
-- **Homepage**: `src/pages/index.tsx` - Hero section with animations
-- **Homepage Styles**: `src/pages/index.module.css` - Neon effects and animations
-- **Global Styles**: `src/css/custom.css` - Color scheme and variables
-- **Documentation**: `docs/*.md` - Markdown content
-- **Navigation**: `sidebars.js` - Sidebar configuration
-- **Logo**: `static/img/aidr-bastion-logo.png` - 3D cyberpunk fortress
-
-## 📚 Documentation
-
-For more information about Docusaurus, visit:
-- [Docusaurus Documentation](https://docusaurus.io/)
-- [AIDR Bastion Repository](https://github.com/0xAIDR/AIDR-Bastion)
-
-## 📝 License
-
-Documentation is licensed under [LGPL-3.0](https://www.gnu.org/licenses/lgpl-3.0.html).
-
-AIDR Bastion project is licensed under [LGPL-3.0](https://github.com/0xAIDR/AIDR-Bastion/blob/main/LICENSE).
-
-
-
+Якщо у вас виникли проблеми з документацією, створіть issue в репозиторії проекту.

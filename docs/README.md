@@ -1,6 +1,6 @@
 # AIDR Bastion
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/artnebo/AIDR-Bastion/blob/main/VERSION)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.2-green.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/license-LGPL%20v3-blue.svg)](LICENSE)

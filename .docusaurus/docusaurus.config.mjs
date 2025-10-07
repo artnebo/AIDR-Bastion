@@ -7,9 +7,9 @@ export default {
   "title": "AIDR Bastion",
   "tagline": "A comprehensive GenAI protection system designed to safeguard against malicious prompts, injection attacks, and harmful content",
   "favicon": "img/favicon.ico",
-  "url": "https://0xaidr.github.io",
+  "url": "https://artnebo.github.io",
   "baseUrl": "/AIDR-Bastion/",
-  "organizationName": "0xAIDR",
+  "organizationName": "artnebo",
   "projectName": "AIDR-Bastion",
   "onBrokenLinks": "warn",
   "onBrokenMarkdownLinks": "warn",
@@ -26,12 +26,13 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/sidebars.js",
-          "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/"
+          "sidebarPath": "/Users/andriibo/Desktop/github/AIDR-Bastion/docs-site/sidebars.js",
+          "editUrl": "https://github.com/0xAIDR/AIDR-Bastion/tree/main/docs/",
+          "routeBasePath": "docs"
         },
         "blog": false,
         "theme": {
-          "customCss": "/Users/andriibo/Desktop/github/AIDR-Bastion-site/src/css/custom.css"
+          "customCss": "/Users/andriibo/Desktop/github/AIDR-Bastion/docs-site/src/css/custom.css"
         }
       }
     ]
@@ -51,10 +52,17 @@ export default {
       },
       "items": [
         {
+          "to": "/",
+          "label": "Home",
+          "position": "left",
+          "activeBaseRegex": "^/$"
+        },
+        {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Documentation"
+          "label": "Documentation",
+          "to": "/docs/intro"
         },
         {
           "href": "https://github.com/0xAIDR/AIDR-Bastion",
